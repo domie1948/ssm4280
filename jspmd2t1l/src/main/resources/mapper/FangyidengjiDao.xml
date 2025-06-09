@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FangyidengjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FangyidengjiEntity" id="fangyidengjiMap">
+        <result property="renyuanxingming" column="renyuanxingming"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="gongyuzhuhu" column="gongyuzhuhu"/>
+        <result property="jiancetiwen" column="jiancetiwen"/>
+        <result property="waichushi" column="waichushi"/>
+        <result property="jiechushi" column="jiechushi"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FangyidengjiVO" >
+		SELECT * FROM fangyidengji  fangyidengji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FangyidengjiVO" >
+		SELECT  fangyidengji.* FROM fangyidengji  fangyidengji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FangyidengjiView" >
+
+		SELECT  fangyidengji.* FROM fangyidengji  fangyidengji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FangyidengjiView" >
+		SELECT * FROM fangyidengji  fangyidengji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>

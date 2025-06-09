@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FankuihuifuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FankuihuifuEntity" id="fankuihuifuMap">
+        <result property="fankuibianhao" column="fankuibianhao"/>
+        <result property="zhuhuzhanghao" column="zhuhuzhanghao"/>
+        <result property="zhuhuxingming" column="zhuhuxingming"/>
+        <result property="fankuileixing" column="fankuileixing"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="huifuneirong" column="huifuneirong"/>
+        <result property="chuliren" column="chuliren"/>
+        <result property="chulishijian" column="chulishijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FankuihuifuVO" >
+		SELECT * FROM fankuihuifu  fankuihuifu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FankuihuifuVO" >
+		SELECT  fankuihuifu.* FROM fankuihuifu  fankuihuifu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FankuihuifuView" >
+
+		SELECT  fankuihuifu.* FROM fankuihuifu  fankuihuifu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FankuihuifuView" >
+		SELECT * FROM fankuihuifu  fankuihuifu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
